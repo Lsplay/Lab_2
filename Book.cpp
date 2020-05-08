@@ -10,16 +10,6 @@ Book::Book()
 }
 Book::Book(int Str, string Name, string Aut)
 {
-	if (Str < 0)
-	{
-		while (Str < 0)
-		{
-			cout << "  ERROR-wrong CountPage, INCLUDE ANOTHER -  " << endl;
-			int X = 0;
-			cin >> X;
-			Str = X;
-		}
-	}
 		CountPage = Str;
 		Book_Name = Name;
 		Author = Aut;
@@ -30,32 +20,21 @@ Book::Book(const Book& other)
 	this->Book_Name = other.Book_Name;
 	this->Author = other.Author;
 }
-int Book::Get_CountPage()
+int Book::Get_CountPage()const
 {
     return CountPage;
 }
-string Book::Get_Book_Name()
+string Book::Get_Book_Name()const
 {
     return Book_Name;
 }
-string Book::Get_Author()
+string Book::Get_Author()const
 {
     return Author;
 }
 void Book::Set_CountPage(int Str)
 {
-	if (Str < 0)
-	{
-		while (Str< 0)
-		{
-			cout << "  ERROR-wrong CountPage, INCLUDE ANOTHER -  " << endl;
-			int X = 0;
-			cin >> X;
-			Str = X;
-		}
-	}
-		CountPage = Str;
-
+	CountPage = Str;
 }
 void Book::Set_Book_Name(string Name)
 {
@@ -65,7 +44,7 @@ void Book::Set_Author(string Aut)
 {
     Author = Aut;
 }
-void Book::Print()
+void Book::Print()const
 {
 	cout << "This Book - " << Book_Name << "  Was writen by - " << Author << " And have " << CountPage << " pages" << endl;
 }

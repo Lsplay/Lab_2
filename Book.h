@@ -14,13 +14,13 @@ public:
     Book();
     Book(int Str, string Name, string Aut);
     Book(const Book& other);
-    int Get_CountPage();
-    string Get_Book_Name();
-    string Get_Author();
+    int Get_CountPage()const;
+    string Get_Book_Name()const;
+    string Get_Author()const;
     void Set_CountPage(int Str);
     void Set_Book_Name(string Name);
     void Set_Author(string Aut);
-    void Print();
+    void Print()const;
     Book& operator = (const Book& other);
     bool operator == (const Book& other);
     bool operator != (const Book& other);
