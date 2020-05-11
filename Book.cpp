@@ -10,6 +10,10 @@ Book::Book()
 }
 Book::Book(int Str, string Name, string Aut)
 {
+	if (Str < 0)
+	{
+		Str = 0;
+	};
 		CountPage = Str;
 		Book_Name = Name;
 		Author = Aut;
@@ -34,6 +38,10 @@ string Book::Get_Author()const
 }
 void Book::Set_CountPage(int Str)
 {
+	if (Str < 0)
+	{
+		Str = 0;
+	};
 	CountPage = Str;
 }
 void Book::Set_Book_Name(string Name)
